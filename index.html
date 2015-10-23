@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Predict the age of abalone</title>
+  <meta charset="utf-8">
+  <meta name="description" content="Predict the age of abalone">
+  <meta name="author" content="Calvin Seto">
+  <meta name="generator" content="slidify" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/default.css" media="all" >
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/phone.css" 
+    media="only screen and (max-device-width: 480px)" >
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/slidify.css" >
+  <link rel="stylesheet" href="libraries/highlighters/highlight.js/css/tomorrow.css" />
+  <base target="_blank"> <!-- This amazingness opens all links in a new tab. -->  <link rel=stylesheet href="./assets/css/ribbons.css"></link>
+
+  
+  <!-- Grab CDN jQuery, fall back to local if offline -->
+  <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.7.min.js"></script>
+  <script>window.jQuery || document.write('<script src="libraries/widgets/quiz/js/jquery.js"><\/script>')</script> 
+  <script data-main="libraries/frameworks/io2012/js/slides" 
+    src="libraries/frameworks/io2012/js/require-1.0.8.min.js">
+  </script>
+  
+  
+
+</head>
+<body style="opacity: 0">
+  <slides class="layout-widescreen">
+    
+    <!-- LOGO SLIDE -->
+        <slide class="title-slide segue nobackground">
+  <aside class="gdbar">
+    <img src="assets/img/logo.jpg">
+  </aside>
+  <hgroup class="auto-fadein">
+    <h1>Predict the age of abalone</h1>
+    <h2>Good Eats</h2>
+    <p>Calvin Seto<br/>Data Scientist</p>
+  </hgroup>
+  <article></article>  
+</slide>
+    
+
+    <!-- SLIDES -->
+    <slide class="" id="slide-1" style="background:;">
+  <hgroup>
+    <h2>Background</h2>
+  </hgroup>
+  <article data-timings="">
+    <ul>
+<li><p>To some Chinese people, Abalone is a food you eat at special occasions like wedding banquets mostly because it is expensive.</p></li>
+<li><p>Texturally, it&#39;s right between a scallop and squid with a crunchiness similar to a conch but closest to the sensation you get eating jellyfish.</p></li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-2" style="background:;">
+  <hgroup>
+    <h2>You need the AbaloneApp</h2>
+  </hgroup>
+  <article data-timings="">
+    <ul>
+<li><p>If you&#39;re going to eat abalone, the most important thing to remember is your wallet.  One of the largest can set you back more than $20.</p></li>
+<li><p>You can use the AbaloneApp to predict the age of the abalone you want to eat and get the most value from your hard earned dollars!</p></li>
+<li><p>Sample prediciton</p></li>
+</ul>
+
+<pre><code class="r"># best fit multiple regression model
+abfit7.2 = lm(log(rings) ~ sex + log(size.mean) + weight.s + weight.sh, data = abalone)
+
+p &lt;- predict(abfit7.2, newdata = data.frame(sex = &quot;K&quot;, size.mean = 0.38,
+                                            weight.s = 0.45, weight.sh = 0.35))
+round(exp(p),0)
+</code></pre>
+
+<pre><code>##  1 
+## 12
+</code></pre>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-3" style="background:;">
+  <hgroup>
+    <h2>How to use the AbaloneApp</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>Simply specify if it&#39;s an infant or non-infant, mean abalone size, shucked weight, and shell weight and click Go!</p>
+
+<p><img src="assets/img/AbaloneAppMainScreen60.png" alt="AbaloneApp Main Screen"></p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-4" style="background:;">
+  <hgroup>
+    <h2>Results</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>Your abalone&#39;s predicted age will appear with a fortune and a picture!</p>
+
+<p>So go to <a href="https://calvinsbiz.shinyapps.io/AbaloneApp">https://calvinsbiz.shinyapps.io/AbaloneApp</a> now!</p>
+
+<p><img src="assets/img/AbaloneAppMainScreen260.png" alt="AbaloneApp Main Screen2"></p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+    <slide class="backdrop"></slide>
+  </slides>
+  <div class="pagination pagination-small" id='io2012-ptoc' style="display:none;">
+    <ul>
+      <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=1 title='Background'>
+         1
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=2 title='You need the AbaloneApp'>
+         2
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=3 title='How to use the AbaloneApp'>
+         3
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=4 title='Results'>
+         4
+      </a>
+    </li>
+  </ul>
+  </div>  <!--[if IE]>
+    <script 
+      src="http://ajax.googleapis.com/ajax/libs/chrome-frame/1/CFInstall.min.js">  
+    </script>
+    <script>CFInstall.check({mode: 'overlay'});</script>
+  <![endif]-->
+</body>
+  <!-- Load Javascripts for Widgets -->
+  
+  <!-- LOAD HIGHLIGHTER JS FILES -->
+  <script src="libraries/highlighters/highlight.js/highlight.pack.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+  <!-- DONE LOADING HIGHLIGHTER JS FILES -->
+   
+  </html>
